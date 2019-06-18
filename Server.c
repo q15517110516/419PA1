@@ -57,14 +57,6 @@ int main(int argc, char **argv[]) {
 	else {
 		printf("Server bind port:[%d]\n", PORT);
 	}
-	
-	//listen 
-	lis = listen(serversocket, LISTEN_QUEUE);
-	if (lis) {
-		printf("Fail to listen.\n");
-		exit(1);
-	}
-
 
 	//the server start to provide service to the client
 	while (1) {
@@ -81,8 +73,6 @@ int main(int argc, char **argv[]) {
 			printf("Fail to receive data.\n");
 			break;
 		}
-
-		bzero(filename, sizeof(filename));
 		strncpy(filename, buff, strlen(buff) > MAX_SIZE ? MAX_SIZE : strlen(buff));
 
 		FILE *fp = fopen(filename, "r");
