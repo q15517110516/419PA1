@@ -89,9 +89,6 @@ int main(int argc, char **argv) {
 			printf("Fail to receive data.\n");
 			break;
 		}
-		
-		 
-		write_len = fwrite(buff, sizeof(char), len, fp);
 		if (write_len < len){
 			printf("Fail to write file.\n");
 			break;
