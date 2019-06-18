@@ -1,0 +1,14 @@
+In this assignment, you will write a program over TCP to allow a client to download files from a server. The
+detailed process is as follows.
+1. The server starts and waits for incoming connection request.
+2. The client establishes a TCP connection with the server.
+3. The client sends a filename to the server over the TCP connection.
+4. The server receives the filename.
+5. If the file is not present, the server informs the client by sending back an error message.
+6. If the file is present, the server continuously reads the file into a buffer and sends the buffer content to the
+client until file-end is reached. File end is marked by EOF.
+7. Once the transmission finishes, the client verifies that the received file is correct. You need decide the
+mechanism that enables verification at the client.
+8. The client chooses to download a different file or close the TCP connection and exit.
+The user interface need not be sophisticated, but should be usable. It can be text-based or graphical. Your program
+should use TCP sockets.
